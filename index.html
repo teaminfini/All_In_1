@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | AI-POWERED COMMERCE</title>
+    <title>SMARTPICK PRO | GLOBAL AI TRENDS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; margin: 0; overflow-x: hidden; }
-        .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f633, transparent); }
-        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; margin: 0; overflow-x: hidden; }
+        .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f644, transparent); }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); transition: 0.5s; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
         .tab-active { background: #2563eb !important; color: white !important; box-shadow: 0 0 20px #2563eb66; }
         .category-tab { background: rgba(255,255,255,0.05); padding: 10px 24px; border-radius: 99px; font-size: 11px; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
     </style>
@@ -20,32 +20,29 @@
 <body>
     <div class="fixed top-0 w-full hero-glow h-screen pointer-events-none"></div>
 
-    <!-- Header -->
     <nav class="flex justify-between items-center p-8 container mx-auto relative z-10">
         <div class="text-3xl font-black italic tracking-tighter uppercase">SmartPick <span class="text-blue-500">PRO</span></div>
         <div class="flex items-center space-x-4">
-            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em] hidden md:block">Neural Sync: Active</span>
+            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em]">Neural Sync: Active</span>
             <div class="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="container mx-auto text-center py-16 px-4 relative z-10" data-aos="zoom-out">
-        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase">Global <br> <span class="text-blue-500">Trend</span> Tracker</h1>
+    <header class="container mx-auto text-center py-20 px-4 relative z-10" data-aos="zoom-out">
+        <h1 class="text-7xl md:text-9xl font-black mb-8 leading-none tracking-tighter uppercase">AI <span class="text-blue-500">TREND</span> ENGINE</h1>
         
         <!-- Category Filter -->
         <div class="flex flex-wrap justify-center gap-4 mt-12" id="tabs-container">
-            <div class="category-tab tab-active" onclick="filterData('All')">ALL ASSETS</div>
+            <div class="category-tab tab-active" onclick="filterData('All')">ALL TRENDS</div>
             <div class="category-tab" onclick="filterData('Electronics')">ELECTRONICS</div>
             <div class="category-tab" onclick="filterData('Home')">HOME</div>
             <div class="category-tab" onclick="filterData('Fashion')">FASHION</div>
         </div>
     </header>
 
-    <!-- Main Grid -->
     <main class="container mx-auto px-6 pb-40 relative z-10">
         <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Products will be injected here -->
+            <!-- Data will be injected here -->
         </div>
     </main>
 
@@ -57,24 +54,17 @@
         async function startEngine() {
             const grid = document.getElementById('product-grid');
             try {
-                // Fetching the JSON you showed in the screenshot
-                const res = await fetch('products.json?nocache=' + Date.now());
+                const res = await fetch('products.json?v=' + Date.now());
                 masterData = await res.json();
                 render(masterData);
             } catch (e) {
-                grid.innerHTML = '<div class="col-span-full text-center text-gray-500 uppercase tracking-widest">Synchronizing Neural Link... Please Refresh.</div>';
+                grid.innerHTML = '<div class="col-span-full text-center py-20 opacity-30 uppercase tracking-[0.5em]">Syncing Neural Link...</div>';
             }
         }
 
         function render(items) {
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
-            
-            if(items.length === 0) {
-                grid.innerHTML = '<div class="col-span-full text-center py-20 opacity-30">SCANNING FOR NEW TRENDS...</div>';
-                return;
-            }
-
             items.forEach((p, i) => {
                 grid.innerHTML += `
                     <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="${i*50}">
@@ -86,25 +76,19 @@
                         <h2 class="text-xl font-bold mb-6 h-14 overflow-hidden leading-tight text-white/90">${p.name}</h2>
                         <div class="flex items-center justify-between border-t border-white/5 pt-6">
                             <span class="text-2xl font-black">${p.price}</span>
-                            <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-3 rounded-2xl font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-blue-600 transition-all shadow-lg shadow-blue-900/20">Analyze</a>
+                            <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-2xl font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-blue-600 transition-all">Analyze Deal</a>
                         </div>
                     </div>`;
             });
         }
 
         function filterData(category) {
-            // Update Tab UI
             document.querySelectorAll('.category-tab').forEach(tab => {
                 tab.classList.remove('tab-active');
                 if(tab.innerText.includes(category.toUpperCase())) tab.classList.add('tab-active');
             });
-
-            if(category === 'All') {
-                render(masterData);
-            } else {
-                const filtered = masterData.filter(item => item.category === category);
-                render(filtered);
-            }
+            if(category === 'All') render(masterData);
+            else render(masterData.filter(item => item.category === category));
         }
 
         startEngine();
