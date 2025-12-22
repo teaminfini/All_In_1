@@ -1,24 +1,24 @@
 [
-  {
-    "id": 1,
-    "name": "Wireless Noise Cancelling Headphones",
-    "category": "Tech",
-    "description": "Premium sound quality with long battery life.",
-    "price": "$299",
-    "affiliate_link": "https://amzn.to/example1",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
-    "status": "active",
-    "last_checked": "2025-12-22"
-  },
-  {
-    "id": 2,
-    "name": "Smart Fitness Watch",
-    "category": "Fitness",
-    "description": "Track your health and workouts daily.",
-    "price": "$149",
-    "affiliate_link": "https://amzn.to/example2",
-    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-    "status": "active",
-    "last_checked": "2025-12-22"
-  }
+    {
+        "id": 1,
+        "name": "Wireless Noise Cancelling Headphones",
+        "category": "Tech",
+        "description": "Premium sound quality with long battery life.",
+        "price": "$299",
+        "affiliate_link": "https://amzn.to/example1",
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+        "status": "broken",
+        "last_checked": "2025-12-22"
+    },
+    {
+        "id": 2,
+        "name": "Smart Fitness Watch",
+        "category": "Fitness",
+        "description": "Track your health and workouts daily.",
+        "price": "$149",
+        "affiliate_link": "https://amzn.to/example2",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+        "status": "broken",
+        "last_checked": "2025-12-22"
+    }
 ]
