@@ -1,106 +1,22 @@
 [
     {
-        "id": -2106140257565895384,
-        "name": "Smart Sleep Mask with Bluetooth",
-        "category": "Wellness",
-        "description": "Trending viral product with high demand and great reviews.",
-        "price": "$12.50",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A//www.aliexpress.com/item/1005005814522301.html",
-        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
-        "status": "active",
-        "last_checked": "2025-12-22"
-    },
-    {
-        "id": -5560829018525854703,
-        "name": "Portable Mini Turbo Jet Fan",
-        "category": "Gadgets",
-        "description": "Trending viral product with high demand and great reviews.",
-        "price": "$15.99",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A//www.aliexpress.com/item/1005006135334751.html",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active",
-        "last_checked": "2025-12-22"
-    },
-    {
-        "id": 1,
-        "name": "Wireless Noise Cancelling Headphones",
+        "id": 101,
+        "name": "Mini Turbo Jet Fan - Viral Gadget",
         "category": "Tech",
-        "description": "Premium sound quality with long battery life.",
-        "price": "$299",
-        "affiliate_link": "https://amzn.to/example1",
-        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
-        "status": "active",
-        "last_checked": "2025-12-22"
-    },
-    {
-        "id": 2,
-        "name": "Smart Fitness Watch",
-        "category": "Fitness",
-        "description": "Track your health and workouts daily.",
-        "price": "$149",
-        "affiliate_link": "https://amzn.to/example2",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active",
-        "last_checked": "2025-12-22"
-    },
-    {
-        "id": 3336071487586711766,
-        "name": "Incogni vs. Optery: Which Data Removal Service Is Better?",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.gadgetreview.com/incogni-vs-optery-which-data-removal-service-is-better",
+        "description": "Powerful portable fan for cooling and cleaning. High velocity airflow.",
+        "price": "$19.99",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005006135334751.html",
         "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
         "status": "active"
     },
     {
-        "id": -7465585154874168255,
-        "name": "5 Reasons Cars Are Aging So Awfully",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.gadgetreview.com/reasons-cars-are-aging-so-awfully",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active"
-    },
-    {
-        "id": -6795794916575423092,
-        "name": "15 WD-40 Car Hacks That Save You Hundreds",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.gadgetreview.com/wd-40-car-hacks-that-save-you-hundreds",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active"
-    },
-    {
-        "id": 984301954593935284,
-        "name": " Quordle hints and answers for Tuesday, December 23 (game #1429) ",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.techradar.com/computing/websites-apps/quordle-today-answers-clues-23-december-2025",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active"
-    },
-    {
-        "id": 2930819628070897871,
-        "name": " NYT Connections hints and answers for Tuesday, December 23 (game #926) ",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.techradar.com/gaming/nyt-connections-today-answers-hints-23-december-2025",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "active"
-    },
-    {
-        "id": -9192709962838397957,
-        "name": " NYT Strands hints and answers for Tuesday, December 23 (game #660) ",
-        "category": "Trending",
-        "description": "Hot product recently searched and discussed.",
-        "price": "Check Site",
-        "affiliate_link": "https://www.techradar.com/computing/websites-apps/nyt-strands-today-answers-hints-23-december-2025",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+        "id": 102,
+        "name": "Bluetooth Sleep Eye Mask",
+        "category": "Lifestyle",
+        "description": "Soft sleep mask with built-in headphones for perfect rest.",
+        "price": "$14.50",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005005814522301.html",
+        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
         "status": "active"
     }
 ]
