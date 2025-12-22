@@ -71,7 +71,7 @@ def main():
             "id": int(datetime.now().timestamp()) + random.randint(1, 999),
             "name": d['name'],
             "price": d['price'],
-            "image": d['image'],
+           "image": f"https://images.weserv.nl/?url={d['image'].replace('https://', '').replace('http://', '')}&w=500&h=500&fit=contain&bg=white",
             "affiliate_link": f"{MY_AFFILIATE_BASE}?ulp={d['url']}",
             "status": "active"
         })
