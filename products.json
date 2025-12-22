@@ -1,22 +1,22 @@
 [
     {
         "id": 101,
-        "name": "Mini Turbo Jet Fan - Viral Gadget",
+        "name": "Portable Turbo Jet Fan",
         "category": "Tech",
-        "description": "Powerful portable fan for cooling and cleaning. High velocity airflow.",
+        "description": "High-speed powerful fan for cooling and cleaning electronics.",
         "price": "$19.99",
         "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005006135334751.html",
-        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+        "image": "https://ae01.alicdn.com/kf/S8f9b90757a3e40408547378c2e7a1773G.jpg",
         "status": "active"
     },
     {
         "id": 102,
-        "name": "Bluetooth Sleep Eye Mask",
+        "name": "Bluetooth Sleep Headphones",
         "category": "Lifestyle",
-        "description": "Soft sleep mask with built-in headphones for perfect rest.",
+        "description": "Ultra-soft eye mask with built-in speakers for better sleep.",
         "price": "$14.50",
         "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005005814522301.html",
-        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
+        "image": "https://ae01.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg",
         "status": "active"
     }
 ]
