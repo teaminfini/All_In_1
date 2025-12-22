@@ -1,5 +1,35 @@
 [
     {
+        "id": 1766418088,
+        "name": "Automatic Self-Cleaning Cat Litter Box",
+        "category": "Hot Picks",
+        "description": "High-demand product trending globally on AliExpress.",
+        "price": "$299.00",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005005432187654.html",
+        "image": "https://ae01.alicdn.com/kf/H76543210abc.jpg",
+        "status": "active"
+    },
+    {
+        "id": 1766418920,
+        "name": "Magnetic Power Bank 10000mAh",
+        "category": "Hot Picks",
+        "description": "High-demand product trending globally on AliExpress.",
+        "price": "$18.50",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005005578432101.html",
+        "image": "https://ae01.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg",
+        "status": "active"
+    },
+    {
+        "id": 1766418701,
+        "name": "Mechanical Gaming Keyboard RGB",
+        "category": "Hot Picks",
+        "description": "High-demand product trending globally on AliExpress.",
+        "price": "$24.99",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https://www.aliexpress.com/item/1005005965643447.html",
+        "image": "https://ae01.alicdn.com/kf/S064560751f9a460497554c2e7a1773G.jpg",
+        "status": "active"
+    },
+    {
         "id": 101,
         "name": "Portable Turbo Jet Fan",
         "category": "Tech",
