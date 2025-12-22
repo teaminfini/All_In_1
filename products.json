@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Noise Cancelling Headphones",
+    "category": "Electronics",
+    "description": "The best headphones for travel and work.",
+    "price": "$299",
+    "affiliate_link": "https://amzn.to/example1",
+    "image": "https://via.placeholder.com/300",
+    "status": "active",
+    "last_checked": "2025-12-22"
+  }
+]
