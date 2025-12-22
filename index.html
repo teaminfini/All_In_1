@@ -4,68 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | GLOBAL INTELLIGENCE</title>
+    <title>SMARTPICK PRO | AI-DRIVEN COMMERCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; }
-        .grid-bg { background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px); background-size: 50px 50px; }
-        .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; }
-        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); }
-        .glow-text { text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+        body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; margin: 0; }
+        .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f644, transparent); }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); transition: 0.5s; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-12px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .moving-dots { position: fixed; inset: 0; background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 40px 40px; opacity: 0.4; z-index: -1; }
+        .btn-ai { background: linear-gradient(90deg, #2563eb, #4f46e5); transition: 0.3s; }
+        .btn-ai:hover { letter-spacing: 2px; box-shadow: 0 0 30px #2563eb; }
     </style>
 </head>
-<body class="grid-bg">
-    <!-- Navbar -->
-    <nav class="p-8 flex justify-between items-center container mx-auto">
-        <div class="text-3xl font-bold glow-text uppercase tracking-tighter">SmartPick<span class="text-blue-500">Pro</span></div>
-        <div class="hidden md:flex space-x-6 text-[10px] tracking-[0.3em] font-bold opacity-50">
-            <span>NETWORK STATUS: ONLINE</span>
-            <span class="text-blue-400">● AI CLOUD SYNCED</span>
+<body class="overflow-x-hidden">
+    <div class="moving-dots"></div>
+    <div class="fixed top-0 w-full hero-glow h-screen pointer-events-none"></div>
+
+    <!-- Header -->
+    <nav class="flex justify-between items-center p-8 container mx-auto">
+        <div class="text-3xl font-black tracking-tighter uppercase">SmartPick <span class="text-blue-500">PRO</span></div>
+        <div class="flex items-center space-x-4">
+            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em] hidden md:block">Neural Network v4.0 Active</span>
+            <div class="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="container mx-auto text-center py-32 px-6" data-aos="fade-up">
-        <h1 class="text-7xl md:text-9xl font-bold mb-8 leading-none tracking-tighter">AI TREND <br> <span class="text-blue-500">IDENTIFIER</span></h1>
-        <p class="max-w-2xl mx-auto text-xl opacity-40 font-light">Analyzing 1.2M+ global transactions per hour to identify high-velocity consumer goods.</p>
+    <section class="container mx-auto text-center py-28 px-6" data-aos="zoom-out">
+        <h1 class="text-7xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none">THE AI <br> <span class="text-blue-500">DEAL</span> ENGINE</h1>
+        <p class="max-w-xl mx-auto text-gray-400 text-lg font-light mb-12">Global Trend Identification System. Real-time arbitrage analysis and product sourcing.</p>
     </section>
 
-    <!-- Products -->
-    <div class="container mx-auto px-6 pb-40">
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Data Injection -->
+    <!-- Grid -->
+    <main class="container mx-auto px-6 pb-40">
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- AI Injection -->
         </div>
-    </div>
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000 });
+        AOS.init({ duration: 1000, once: true });
         async function syncNetwork() {
             const grid = document.getElementById('product-grid');
             try {
-                const res = await fetch('products.json?v=' + Date.now());
+                const res = await fetch('products.json?cache=' + Date.now());
                 const data = await res.json();
                 grid.innerHTML = '';
                 data.forEach((p, i) => {
                     grid.innerHTML += `
                         <div class="glass-card rounded-[2.5rem] p-8 group" data-aos="fade-up" data-aos-delay="${i*100}">
-                            <div class="h-72 mb-8 rounded-3xl overflow-hidden bg-white flex items-center justify-center relative">
-                                <img src="${p.image}" class="max-h-[80%] object-contain transition-transform duration-700 group-hover:scale-110" 
-                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Syncing+Asset...'">
-                                <div class="absolute bottom-4 left-4 bg-blue-600 text-[10px] font-bold px-4 py-1 rounded-full uppercase">Verified Trend</div>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4 h-16 overflow-hidden">${p.name}</h3>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-6">
-                                <div class="text-3xl font-bold">${p.price}</div>
-                                <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold text-sm hover:bg-white hover:text-blue-600 transition-all">ANALYZE DEAL</a>
-                            </div>
-                        </div>`;
-                });
-            } catch (e) { console.error("Sync Error", e); }
-        }
-        syncNetwork();
-    </script>
-</body>
-</html>
+                            <div class="relative h-64 mb-8 rounded-3xl overflow-hidden bg-white flex items-center justify-center">
+                                <img src="${p.image}" class="max-h-[85%] object-contain transition-transform duration-700 group-hover:scale-110" 
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Asset+Syncing...'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
