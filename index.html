@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | AI-DRIVEN COMMERCE</title>
+    <title>SMARTPICK PRO | AI-DRIVEN GLOBAL TRENDS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
         body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; margin: 0; }
         .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f644, transparent); }
-        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); transition: 0.5s; }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .glass-card:hover { border-color: #3b82f6; transform: translateY(-12px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .moving-dots { position: fixed; inset: 0; background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 40px 40px; opacity: 0.4; z-index: -1; }
-        .btn-ai { background: linear-gradient(90deg, #2563eb, #4f46e5); transition: 0.3s; }
-        .btn-ai:hover { letter-spacing: 2px; box-shadow: 0 0 30px #2563eb; }
+        .btn-ai { background: linear-gradient(90deg, #2563eb, #4f46e5); transition: 0.3s; position: relative; overflow: hidden; }
+        .btn-ai:hover { box-shadow: 0 0 30px #2563eb; transform: scale(1.05); }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -26,23 +26,31 @@
     <nav class="flex justify-between items-center p-8 container mx-auto">
         <div class="text-3xl font-black tracking-tighter uppercase">SmartPick <span class="text-blue-500">PRO</span></div>
         <div class="flex items-center space-x-4">
-            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em] hidden md:block">Neural Network v4.0 Active</span>
+            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em] hidden md:block">Neural Network v4.5 Active</span>
             <div class="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="container mx-auto text-center py-28 px-6" data-aos="zoom-out">
-        <h1 class="text-7xl md:text-9xl font-extrabold mb-8 tracking-tighter leading-none">THE AI <br> <span class="text-blue-500">DEAL</span> ENGINE</h1>
-        <p class="max-w-xl mx-auto text-gray-400 text-lg font-light mb-12">Global Trend Identification System. Real-time arbitrage analysis and product sourcing.</p>
-    </section>
+    <header class="container mx-auto text-center py-24 px-6" data-aos="zoom-out">
+        <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none uppercase">Real-time <br> <span class="text-blue-500 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600">Trend Engine</span></h1>
+        <p class="max-w-xl mx-auto text-gray-400 text-lg font-light mb-12">Global decentralized system identifying high-velocity consumer goods using AI analysis.</p>
+    </header>
 
-    <!-- Grid -->
+    <!-- Product Grid -->
     <main class="container mx-auto px-6 pb-40">
         <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <!-- AI Injection -->
+            <!-- Loading State -->
+            <div class="col-span-full text-center py-20 opacity-50">
+                <div class="animate-spin h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                <p class="uppercase tracking-widest text-xs">Synchronizing with Global API...</p>
+            </div>
         </div>
     </main>
+
+    <footer class="border-t border-white/5 py-10 text-center text-gray-600 text-xs">
+        <p>&copy; 2025 SmartPick AI Technology Group. All Rights Reserved.</p>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -50,13 +58,33 @@
         async function syncNetwork() {
             const grid = document.getElementById('product-grid');
             try {
-                const res = await fetch('products.json?cache=' + Date.now());
+                // Fetching with anti-cache timestamp
+                const res = await fetch('products.json?v=' + Date.now());
+                if(!res.ok) throw new Error();
                 const data = await res.json();
+                
                 grid.innerHTML = '';
                 data.forEach((p, i) => {
                     grid.innerHTML += `
-                        <div class="glass-card rounded-[2.5rem] p-8 group" data-aos="fade-up" data-aos-delay="${i*100}">
-                            <div class="relative h-64 mb-8 rounded-3xl overflow-hidden bg-white flex items-center justify-center">
-                                <img src="${p.image}" class="max-h-[85%] object-contain transition-transform duration-700 group-hover:scale-110" 
-                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Asset+Syncing...'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                        <div class="glass-card rounded-[2.5rem] p-7 group" data-aos="fade-up" data-aos-delay="${i*100}">
+                            <div class="relative h-64 mb-8 rounded-3xl overflow-hidden bg-white flex items-center justify-center p-4">
+                                <img src="${p.image}" class="max-h-full object-contain transition-transform duration-700 group-hover:scale-110" 
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Image+Syncing...'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
+                            </div>
+                            <div class="text-[10px] font-bold text-blue-500 uppercase tracking-[0.3em] mb-3 leading-none">AI Verified Asset</div>
+                            <h3 class="text-xl font-bold mb-6 h-14 overflow-hidden leading-tight text-white/90">${p.name}</h3>
+                            <div class="flex items-center justify-between border-t border-white/5 pt-6">
+                                <span class="text-2xl font-black text-white">${p.price}</span>
+                                <a href="${p.affiliate_link}" target="_blank" class="btn-ai text-white px-7 py-3 rounded-2xl font-bold text-[10px] uppercase tracking-widest transition-all">Analyze Deal</a>
+                            </div>
+                        </div>`;
+                });
+            } catch (e) {
+                grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Neural Link Offline. Please refresh or check GitHub Actions.</div>';
+            }
+        }
+        syncNetwork();
+    </script>
+</body>
+</html>
