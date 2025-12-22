@@ -1,5 +1,27 @@
 [
     {
+        "id": -2106140257565895384,
+        "name": "Smart Sleep Mask with Bluetooth",
+        "category": "Wellness",
+        "description": "Trending viral product with high demand and great reviews.",
+        "price": "$12.50",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A//www.aliexpress.com/item/1005005814522301.html",
+        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
+        "status": "active",
+        "last_checked": "2025-12-22"
+    },
+    {
+        "id": -5560829018525854703,
+        "name": "Portable Mini Turbo Jet Fan",
+        "category": "Gadgets",
+        "description": "Trending viral product with high demand and great reviews.",
+        "price": "$15.99",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A//www.aliexpress.com/item/1005006135334751.html",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+        "status": "active",
+        "last_checked": "2025-12-22"
+    },
+    {
         "id": 1,
         "name": "Wireless Noise Cancelling Headphones",
         "category": "Tech",
@@ -7,7 +29,7 @@
         "price": "$299",
         "affiliate_link": "https://amzn.to/example1",
         "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
-        "status": "broken",
+        "status": "active",
         "last_checked": "2025-12-22"
     },
     {
@@ -18,7 +40,7 @@
         "price": "$149",
         "affiliate_link": "https://amzn.to/example2",
         "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-        "status": "broken",
+        "status": "active",
         "last_checked": "2025-12-22"
     },
     {
