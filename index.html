@@ -4,94 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | GLOBAL AI TRENDS</title>
+    <title>SMARTPICK PRO | AI TRENDS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; margin: 0; overflow-x: hidden; }
-        .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f644, transparent); }
-        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); transition: 0.5s; }
-        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
-        .tab-active { background: #2563eb !important; color: white !important; box-shadow: 0 0 20px #2563eb66; }
-        .category-tab { background: rgba(255,255,255,0.05); padding: 10px 24px; border-radius: 99px; font-size: 11px; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; margin: 0; }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.08); transition: 0.5s; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); }
+        .active-tab { background: #2563eb !important; color: white !important; }
+        .tab { background: rgba(255,255,255,0.05); padding: 8px 20px; border-radius: 99px; font-size: 11px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="fixed top-0 w-full hero-glow h-screen pointer-events-none"></div>
-
-    <nav class="flex justify-between items-center p-8 container mx-auto relative z-10">
+    <nav class="p-8 flex justify-between items-center container mx-auto">
         <div class="text-3xl font-black italic tracking-tighter uppercase">SmartPick <span class="text-blue-500">PRO</span></div>
-        <div class="flex items-center space-x-4">
-            <span class="text-[10px] font-bold opacity-40 uppercase tracking-[0.4em]">Neural Sync: Active</span>
-            <div class="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-        </div>
+        <div class="text-[10px] opacity-40 font-bold uppercase tracking-widest">Neural Link v5.0 Active</div>
     </nav>
 
-    <header class="container mx-auto text-center py-20 px-4 relative z-10" data-aos="zoom-out">
-        <h1 class="text-7xl md:text-9xl font-black mb-8 leading-none tracking-tighter uppercase">AI <span class="text-blue-500">TREND</span> ENGINE</h1>
+    <header class="container mx-auto text-center py-10 px-4" data-aos="zoom-out">
+        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-none tracking-tighter uppercase">AI <span class="text-blue-500 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600">DEAL</span> ENGINE</h1>
         
-        <!-- Category Filter -->
-        <div class="flex flex-wrap justify-center gap-4 mt-12" id="tabs-container">
-            <div class="category-tab tab-active" onclick="filterData('All')">ALL TRENDS</div>
-            <div class="category-tab" onclick="filterData('Electronics')">ELECTRONICS</div>
-            <div class="category-tab" onclick="filterData('Home')">HOME</div>
-            <div class="category-tab" onclick="filterData('Fashion')">FASHION</div>
+        <div class="flex flex-wrap justify-center gap-4 mt-8" id="filter-tabs">
+            <div class="tab active-tab" onclick="filterData('All')">ALL TRENDS</div>
+            <div class="tab" onclick="filterData('Electronics')">ELECTRONICS</div>
+            <div class="tab" onclick="filterData('Home')">HOME</div>
+            <div class="tab" onclick="filterData('Fashion')">FASHION</div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 pb-40 relative z-10">
+    <main class="container mx-auto px-6 pb-40">
         <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Data will be injected here -->
+            <!-- Products will appear here -->
         </div>
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-        let masterData = [];
+        AOS.init();
+        let products = [];
 
-        async function startEngine() {
+        async function load() {
             const grid = document.getElementById('product-grid');
             try {
                 const res = await fetch('products.json?v=' + Date.now());
-                masterData = await res.json();
-                render(masterData);
+                products = await res.json();
+                render(products);
             } catch (e) {
-                grid.innerHTML = '<div class="col-span-full text-center py-20 opacity-30 uppercase tracking-[0.5em]">Syncing Neural Link...</div>';
+                grid.innerHTML = '<p class="col-span-full text-center py-20 opacity-30">SCANNING MARKETS...</p>';
             }
         }
 
-        function render(items) {
+        function render(data) {
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
-            items.forEach((p, i) => {
+            data.forEach((p, i) => {
                 grid.innerHTML += `
                     <div class="glass-card rounded-[2.5rem] p-6 group" data-aos="fade-up" data-aos-delay="${i*50}">
                         <div class="relative h-56 mb-6 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-4">
-                            <img src="${p.image}" class="max-h-full object-contain transition-transform duration-700 group-hover:scale-110" 
-                                 onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Asset+Syncing...'">
+                            <img src="${p.image}" class="max-h-full object-contain transition-transform duration-700 group-hover:scale-110" onerror="this.src='https://placehold.co/400x400/020617/3b82f6?text=Asset+Syncing...'">
                         </div>
-                        <div class="text-[10px] font-bold text-blue-500 uppercase tracking-[0.2em] mb-2">${p.category}</div>
-                        <h2 class="text-xl font-bold mb-6 h-14 overflow-hidden leading-tight text-white/90">${p.name}</h2>
+                        <div class="text-[10px] text-blue-500 font-bold uppercase mb-2">${p.category}</div>
+                        <h2 class="text-lg font-bold mb-6 h-12 overflow-hidden leading-tight">${p.name}</h2>
                         <div class="flex items-center justify-between border-t border-white/5 pt-6">
                             <span class="text-2xl font-black">${p.price}</span>
-                            <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-2xl font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-blue-600 transition-all">Analyze Deal</a>
+                            <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-xl font-bold text-xs hover:bg-white hover:text-blue-600 transition-all">ANALYZE</a>
                         </div>
                     </div>`;
             });
         }
 
-        function filterData(category) {
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.remove('tab-active');
-                if(tab.innerText.includes(category.toUpperCase())) tab.classList.add('tab-active');
-            });
-            if(category === 'All') render(masterData);
-            else render(masterData.filter(item => item.category === category));
+        function filterData(cat) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active-tab'));
+            event.target.classList.add('active-tab');
+            if(cat === 'All') render(products);
+            else render(products.filter(p => p.category === cat));
         }
 
-        startEngine();
+        load();
     </script>
 </body>
 </html>
