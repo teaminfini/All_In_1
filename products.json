@@ -1,13 +1,87 @@
-[
-  {
-    "id": 1,
-    "name": "Wireless Noise Cancelling Headphones",
-    "category": "Electronics",
-    "description": "The best headphones for travel and work.",
-    "price": "$299",
-    "affiliate_link": "https://amzn.to/example1",
-    "image": "https://via.placeholder.com/300",
-    "status": "active",
-    "last_checked": "2025-12-22"
-  }
-]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPick AI | Best Global Deals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-card:hover { transform: translateY(-5px); transition: all 0.3s; }
+        .category-badge { transition: all 0.2s; cursor: pointer; }
+        .category-badge:hover { background-color: #4f46e5; color: white; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-indigo-600 tracking-tight">SMART<span class="text-gray-900">PICK</span></h1>
+            <div class="hidden md:flex space-x-6 text-gray-600 font-medium">
+                <span class="category-badge px-3 py-1 rounded-full border border-gray-200 text-sm">Tech</span>
+                <span class="category-badge px-3 py-1 rounded-full border border-gray-200 text-sm">Home</span>
+                <span class="category-badge px-3 py-1 rounded-full border border-gray-200 text-sm">Fitness</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-indigo-600 py-16 text-center text-white">
+        <h2 class="text-4xl font-bold mb-4">Discover the Most Trending Products</h2>
+        <p class="text-indigo-100 text-lg">Daily updated picks powered by AI analysis</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Loading Spinner -->
+            <div class="col-span-full text-center py-20 text-gray-400">
+                <i class="fas fa-spinner fa-spin text-3xl"></i>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 SmartPick AI Affiliate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function loadProducts() {
+            try {
+                const response = await fetch('products.json');
+                const products = await response.json();
+                const grid = document.getElementById('product-grid');
+                grid.innerHTML = '';
+
+                products.forEach(p => {
+                    if (p.status === 'active') {
+                        grid.innerHTML += `
+                            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                                <div class="relative">
+                                    <img src="${p.image}" class="w-full h-52 object-cover" alt="${p.name}">
+                                    <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">HOT</span>
+                                </div>
+                                <div class="p-5">
+                                    <span class="text-indigo-500 text-xs font-bold uppercase tracking-widest">${p.category}</span>
+                                    <h3 class="text-lg font-bold text-gray-900 mt-1 h-14 overflow-hidden">${p.name}</h3>
+                                    <div class="flex items-center justify-between mt-6">
+                                        <span class="text-2xl font-black text-gray-900">${p.price}</span>
+                                        <a href="${p.affiliate_link}" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold transition">
+                                            View Deal
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (e) {
+                console.error("Error loading products:", e);
+            }
+        }
+        loadProducts();
+    </script>
+</body>
+</html>
