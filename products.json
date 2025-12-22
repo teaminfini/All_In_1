@@ -1,74 +1,51 @@
 [
     {
-        "id": 574370,
-        "name": "Portable Turbo Jet Fan 110,000 RPM",
-        "category": "Home",
-        "price": "$31.00",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S7b973522f08547378c2e7a1773G.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006135334751.html",
-        "status": "active"
-    },
-    {
-        "id": 510394,
-        "name": "Tactical Military Smart Watch",
-        "category": "Fashion",
-        "price": "$38.00",
+        "name": "Zeblaze Stratos 3 Pro GPS Smartwatch",
+        "category": "Electronics",
+        "price": "$64.50",
         "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S89476906564344798e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005965432101.html",
-        "status": "active"
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006016738012.html"
     },
     {
-        "id": 547017,
-        "name": "Luxury Skeleton Automatic Watch",
-        "category": "Fashion",
-        "price": "$45.00",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006001234567.html",
-        "status": "active"
-    },
-    {
-        "id": 473424,
-        "name": "Anker Soundcore Q20i Hybrid ANC Headphones",
+        "name": "Anker Soundcore Q20i Hybrid ANC",
         "category": "Electronics",
         "price": "$39.99",
         "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005965643447.html",
-        "status": "active"
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005965643447.html"
     },
     {
-        "id": 858846,
-        "name": "Smart LED RGB Light Bar with App",
+        "name": "Baseus GaN5 Pro 65W Charger",
+        "category": "Electronics",
+        "price": "$28.90",
+        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html"
+    },
+    {
+        "name": "Portable Turbo Jet Fan 110k RPM",
+        "category": "Home",
+        "price": "$31.00",
+        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S7b973522f08547378c2e7a1773G.jpg&w=600&h=600&fit=contain&bg=white",
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006135334751.html"
+    },
+    {
+        "name": "Smart LED RGB Light Bar",
         "category": "Home",
         "price": "$12.50",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html",
-        "status": "active"
+        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S064560751f9a460497554c2e7a1773G.jpg&w=600&h=600&fit=contain&bg=white",
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html"
     },
     {
-        "id": 467812,
-        "name": "Baseus GaN5 Pro Desktop Charger 65W",
-        "category": "Electronics",
-        "price": "$28.50",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html",
-        "status": "active"
-    },
-    {
-        "id": 278466,
-        "name": "Automatic Self-Cleaning Cat Litter Box",
-        "category": "Home",
-        "price": "$299.00",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S8f9b90757a3e40408547378c2e7a1773G.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005432187654.html",
-        "status": "active"
-    },
-    {
-        "id": 213517,
         "name": "Bluetooth Smart Sleep Mask",
         "category": "Fashion",
-        "price": "$15.99",
-        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
-        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005814522301.html",
-        "status": "active"
+        "price": "$15.90",
+        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg&w=600&h=600&fit=contain&bg=white",
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005814522301.html"
+    },
+    {
+        "name": "Tactical Military Rugged Smartwatch",
+        "category": "Fashion",
+        "price": "$38.00",
+        "image": "https://wsrv.nl/?url=ae01.alicdn.com/kf/S89476906564344798e12f8a4495964955b9e592474f3j.jpg&w=600&h=600&fit=contain&bg=white",
+        "affiliate_link": "https://ad.admitad.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005965432101.html"
     }
 ]
