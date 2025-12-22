@@ -1,42 +1,59 @@
 import requests
 import json
 import os
-import xml.etree.ElementTree as ET
+from datetime import datetime
+import urllib.parse
 
+# --- تنظیمات اختصاصی تو ---
+# لینکی که در عکس فرستادی را اینجا دقیقاً کپی کن:
+BASE_AFFILIATE_LINK = "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/"
 DB_FILE = 'products.json'
 
-def get_trending_from_feed():
-    print("Fetching real trends...")
-    # استفاده از فید محصولات جدید و پرطرفدار (به عنوان نمونه)
-    feeds = [
-        "https://www.gadgetreview.com/feed",
-        "https://www.techradar.com/rss"
+def create_deep_link(product_url):
+    """این تابع لینک محصول را به لینک پولساز تو تبدیل می‌کند"""
+    encoded_url = urllib.parse.quote(product_url)
+    # ساختار استاندارد دی‌لینک در ادیتاد
+    return f"{BASE_AFFILIATE_LINK}?ulp={encoded_url}"
+
+def fetch_trending_products():
+    """شبیه‌سازی پیدا کردن محصولات پربحث و ترند"""
+    # در اینجا لیست محصولاتی که الان در دنیا ترند هستند را داریم
+    # این لیست می‌تواند در آینده با اسکرپینگ یا API کامل‌تر شود
+    trends = [
+        {
+            "name": "Portable Mini Turbo Jet Fan",
+            "url": "https://www.aliexpress.com/item/1005006135334751.html",
+            "price": "$15.99",
+            "category": "Gadgets",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+        },
+        {
+            "name": "Smart Sleep Mask with Bluetooth",
+            "url": "https://www.aliexpress.com/item/1005005814522301.html",
+            "price": "$12.50",
+            "category": "Wellness",
+            "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500"
+        }
     ]
     
-    new_items = []
-    for url in feeds:
-        try:
-            response = requests.get(url, timeout=10)
-            root = ET.fromstring(response.content)
-            for item in root.findall('./channel/item')[:3]: # ۳ تای اول هر فید
-                title = item.find('title').text
-                link = item.find('link').text
-                new_items.append({
-                    "id": hash(title),
-                    "name": title,
-                    "category": "Trending",
-                    "description": "Hot product recently searched and discussed.",
-                    "price": "Check Site",
-                    "affiliate_link": link, # در مرحله بعد این را به لینک خودت تبدیل می‌کنیم
-                    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-                    "status": "active"
-                })
-        except Exception as e:
-            print(f"Error fetching feed: {e}")
-    return new_items
+    formatted_products = []
+    for t in trends:
+        formatted_products.append({
+            "id": int(datetime.now().timestamp()) + hash(t['name']),
+            "name": t['name'],
+            "category": t['category'],
+            "description": "Trending viral product with high demand and great reviews.",
+            "price": t['price'],
+            "affiliate_link": create_deep_link(t['url']),
+            "image": t['img'],
+            "status": "active",
+            "last_checked": datetime.now().strftime("%Y-%m-%d")
+        })
+    return formatted_products
 
-def update_system():
-    # ۱. بارگذاری دیتابیس فعلی
+def main():
+    print("Updating site with trending products...")
+    
     if os.path.exists(DB_FILE):
         with open(DB_FILE, 'r') as f:
             try:
@@ -45,27 +62,29 @@ def update_system():
     else:
         products = []
 
-    # ۲. چک کردن زنده بودن لینک‌ها (همان چیزی که خواسته بودی)
+    # ۱. چک کردن لینک‌های قدیمی (اگر خراب باشند حذف یا غیرفعال می‌شوند)
     for p in products:
         try:
-            res = requests.head(p['affiliate_link'], timeout=5, allow_redirects=True)
+            res = requests.head(p['affiliate_link'], timeout=5)
             p['status'] = 'active' if res.status_code < 400 else 'broken'
         except:
             p['status'] = 'broken'
 
-    # ۳. اضافه کردن محصولات پرسرچ جدید
-    trending_products = get_trending_from_feed()
+    # ۲. اضافه کردن ترندهای جدید
+    new_trends = fetch_trending_products()
     existing_names = [p['name'] for p in products]
+    
+    for nt in new_trends:
+        if nt['name'] not in existing_names:
+            products.insert(0, nt) # اضافه کردن به ابتدای لیست (بالای سایت)
 
-    for tp in trending_products:
-        if tp['name'] not in existing_names:
-            products.append(tp)
-            print(f"New trend added: {tp['name']}")
+    # ۳. محدود کردن تعداد محصولات (مثلاً فقط ۲۰ تای آخر) برای سرعت سایت
+    products = products[:20]
 
-    # ۴. ذخیره نهایی
     with open(DB_FILE, 'w') as f:
         json.dump(products, f, indent=4)
-    print("All done!")
+    
+    print(f"Update complete. Total products: {len(products)}")
 
 if __name__ == "__main__":
-    update_system()
+    main()
