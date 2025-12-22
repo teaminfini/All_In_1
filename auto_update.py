@@ -1,41 +1,42 @@
 import json
 import os
-import requests
 
-# لینک افیلیت اختصاصی تو که از عکس برداشتم
+# لینک پایه افیلیت تو
 MY_AFFILIATE_BASE = "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/"
 
 def main():
-    # لیست محصولاتی که می‌خواهیم همین الان در سایت ظاهر شوند
-    # تو می‌توانی هر زمان خواستی این لیست را دستی زیاد کنی
+    # محصولات با عکس‌های واقعی و هماهنگ
     new_products = [
         {
             "id": 101,
-            "name": "Mini Turbo Jet Fan - Viral Gadget",
+            "name": "Portable Turbo Jet Fan",
             "category": "Tech",
-            "description": "Powerful portable fan for cooling and cleaning. High velocity airflow.",
+            "description": "High-speed powerful fan for cooling and cleaning electronics.",
             "price": "$19.99",
+            # لینک محصول واقعی در علی اکسپرس
             "affiliate_link": f"{MY_AFFILIATE_BASE}?ulp=https://www.aliexpress.com/item/1005006135334751.html",
-            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+            # عکس واقعی توربو فن
+            "image": "https://ae01.alicdn.com/kf/S8f9b90757a3e40408547378c2e7a1773G.jpg",
             "status": "active"
         },
         {
             "id": 102,
-            "name": "Bluetooth Sleep Eye Mask",
+            "name": "Bluetooth Sleep Headphones",
             "category": "Lifestyle",
-            "description": "Soft sleep mask with built-in headphones for perfect rest.",
+            "description": "Ultra-soft eye mask with built-in speakers for better sleep.",
             "price": "$14.50",
+            # لینک محصول واقعی
             "affiliate_link": f"{MY_AFFILIATE_BASE}?ulp=https://www.aliexpress.com/item/1005005814522301.html",
-            "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
+            # عکس واقعی چشم‌بند بلوتوثی
+            "image": "https://ae01.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg",
             "status": "active"
         }
     ]
 
-    # ذخیره مستقیم در فایل - بدون هیچ شرطی تا مطمئن شویم فایل پر می‌شود
     with open('products.json', 'w') as f:
         json.dump(new_products, f, indent=4)
     
-    print("Success! products.json has been updated.")
+    print("Database Updated with real images and links!")
 
 if __name__ == "__main__":
     main()
