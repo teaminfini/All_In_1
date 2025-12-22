@@ -4,54 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | AI TRENDS</title>
+    <title>SMARTPICK PRO | GLOBAL AI COMMERCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        body { background: #020617; color: white; font-family: sans-serif; }
-        .product-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px; transition: 0.3s; }
-        .product-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; margin: 0; }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; }
+        .active-tab { background: #2563eb !important; color: white !important; box-shadow: 0 0 20px #2563eb66; }
+        .category-btn { background: rgba(255,255,255,0.05); padding: 10px 25px; border-radius: 99px; font-size: 12px; font-weight: bold; cursor: pointer; transition: 0.3s; }
     </style>
 </head>
 <body>
-    <nav class="p-6 border-b border-white/5 shadow-xl">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter">SMARTPICK <span class="text-blue-500">PRO</span></div>
-            <div class="text-[10px] opacity-50 uppercase tracking-widest">Global AI Engine Active</div>
-        </div>
+    <nav class="p-8 flex justify-between items-center container mx-auto">
+        <div class="text-3xl font-black tracking-tighter uppercase">SmartPick <span class="text-blue-500">PRO</span></div>
+        <div class="text-xs opacity-40 font-bold uppercase tracking-widest hidden md:block">Neural Network v5.0 Active</div>
     </nav>
 
-    <div class="container mx-auto px-6 py-12">
-        <h1 class="text-4xl md:text-6xl font-bold text-center mb-16">Trending <span class="text-blue-500">Global</span> Deals</h1>
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Products will appear here -->
+    <header class="container mx-auto text-center py-16 px-6">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">AI TREND <br><span class="text-blue-500">IDENTIFIER</span></h1>
+        
+        <!-- Category Filter -->
+        <div class="flex flex-wrap justify-center gap-4 mt-12" id="category-tabs">
+            <div class="category-btn active-tab" onclick="filterProducts('All')">ALL TRENDS</div>
+            <div class="category-btn" onclick="filterProducts('Electronics')">ELECTRONICS</div>
+            <div class="category-btn" onclick="filterProducts('Home')">HOME & GARDEN</div>
+            <div class="category-btn" onclick="filterProducts('Fashion')">FASHION</div>
         </div>
-    </div>
+    </header>
+
+    <main class="container mx-auto px-6 pb-40">
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Products will be injected here -->
+        </div>
+    </main>
 
     <script>
-        async function load() {
+        let allProducts = [];
+
+        async function init() {
             const grid = document.getElementById('product-grid');
             try {
-                const res = await fetch('products.json?v=' + Math.random());
-                const data = await res.json();
-                grid.innerHTML = '';
-                data.forEach(p => {
-                    grid.innerHTML += `
-                        <div class="product-card">
-                            <div class="bg-white rounded-xl mb-4 overflow-hidden h-48 flex items-center justify-center">
-                                <img src="${p.image}" class="max-h-full object-contain" onerror="this.src='https://placehold.co/400x400?text=Syncing...'">
-                            </div>
-                            <h3 class="font-bold text-lg mb-4 h-12 overflow-hidden leading-tight">${p.name}</h3>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xl font-black text-blue-400">${p.price}</span>
-                                <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-lg font-bold text-sm hover:bg-blue-700">BUY NOW</a>
-                            </div>
-                        </div>`;
-                });
+                const res = await fetch('products.json?v=' + Date.now());
+                allProducts = await res.json();
+                render(allProducts);
             } catch (e) {
-                grid.innerHTML = '<p class="text-center col-span-full">Database syncing. Please refresh in 1 minute...</p>';
+                grid.innerHTML = '<div class="col-span-full text-center py-20 text-gray-500 italic uppercase">System initializing... Please refresh in 60 seconds.</div>';
             }
         }
-        load();
+
+        function render(data) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            data.forEach(p => {
+                grid.innerHTML += `
+                    <div class="glass-card rounded-[2.5rem] p-6 hover:translate-y-[-10px] transition-all">
+                        <div class="h-56 bg-white rounded-2xl mb-6 flex items-center justify-center p-4">
+                            <img src="${p.image}" class="max-h-full object-contain" onerror="this.src='https://placehold.co/400x400/020617/3b82f6?text=Syncing...'">
+                        </div>
+                        <div class="text-[10px] text-blue-500 font-bold uppercase mb-2">${p.category}</div>
+                        <h3 class="text-lg font-bold mb-6 h-12 overflow-hidden">${p.name}</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-black">${p.price}</span>
+                            <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-xl font-bold text-sm hover:bg-white hover:text-blue-600 transition-all">DEAL</a>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        function filterProducts(cat) {
+            // Update UI tabs
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active-tab');
+                if(btn.innerText.toLowerCase() === cat.toLowerCase() || (cat === 'All' && btn.innerText === 'ALL TRENDS')) {
+                    btn.classList.add('active-tab');
+                }
+            });
+
+            if(cat === 'All') render(allProducts);
+            else render(allProducts.filter(p => p.category === cat));
+        }
+
+        init();
     </script>
 </body>
 </html>
