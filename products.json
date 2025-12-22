@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "name": "Zeblaze Stratos 3 Pro GPS",
+        "category": "Electronics",
+        "price": "$64.50",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/S89476906564344798e12f8a4495964955b9e592474f3j.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006016738012.html"
+    },
+    {
+        "name": "Baseus GaN5 Pro 65W Charger",
+        "category": "Electronics",
+        "price": "$28.90",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html"
+    },
+    {
+        "name": "Portable Turbo Jet Fan 110k RPM",
+        "category": "Home",
+        "price": "$31.00",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/S7b973522f08547378c2e7a1773G.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006135334751.html"
+    },
+    {
+        "name": "Smart LED RGB Light Bar",
+        "category": "Home",
+        "price": "$12.50",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/S064560751f9a460497554c2e7a1773G.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005578432101.html"
+    },
+    {
+        "name": "Luxury Skeleton Automatic Watch",
+        "category": "Fashion",
+        "price": "$45.00",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/Sa8f6d5e12f8a4495964955b9e592474f3.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005006001234567.html"
+    },
+    {
+        "name": "Bluetooth Sleep Headphones Mask",
+        "category": "Fashion",
+        "price": "$15.90",
+        "image": "https://images.weserv.nl/?url=ae04.alicdn.com/kf/Sf5e12f8a4495964955b9e592474f3j.jpg&w=500&fit=contain&bg=white",
+        "affiliate_link": "https://rzekl.com/g/1e8d114494f9dbcef44416525dc3e8/?ulp=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F1005005814522301.html"
+    }
+]
