@@ -15,6 +15,8 @@
         .hero-gradient { background: radial-gradient(circle at top right, #3b82f6, transparent), radial-gradient(circle at bottom left, #1d4ed8, transparent); }
         .btn-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); transition: 0.3s; }
         .btn-glow:hover { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8); transform: translateY(-2px); }
+        /* استایل کمکی برای نمایش بهتر محصولات */
+        .product-img-container { background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     </style>
 </head>
 <body>
@@ -51,7 +53,7 @@
     <!-- Product Grid -->
     <main class="container mx-auto px-4 py-20">
         <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Loading States are now beautiful -->
+            <!-- Loading States -->
             <div class="col-span-full text-center py-20">
                 <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4"></div>
                 <p class="text-gray-500 uppercase tracking-widest text-sm">Synchronizing with Global Databases...</p>
@@ -86,8 +88,10 @@
                 products.forEach((p, index) => {
                     grid.innerHTML += `
                         <div class="glass rounded-3xl p-6 hover:bg-white/5 transition-all group" data-aos="fade-up" data-aos-delay="${index * 100}">
-                            <div class="relative mb-6 overflow-hidden rounded-2xl">
-                                <img src="${p.image}" alt="${p.name}" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700">
+                            <div class="relative mb-6 overflow-hidden rounded-2xl product-img-container">
+                                <img src="${p.image}" alt="${p.name}" 
+                                     class="w-full h-64 object-contain transform group-hover:scale-110 transition duration-700"
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Trending+Deal'">
                                 <div class="absolute top-4 left-4 bg-blue-600 text-xs font-black px-3 py-1 rounded-full">TOP TREND</div>
                             </div>
                             <h3 class="text-xl font-bold mb-2 h-14 overflow-hidden leading-tight">${p.name}</h3>
