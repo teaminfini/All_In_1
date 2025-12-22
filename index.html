@@ -4,73 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="verify-admitad" content="f9dbcef444" />
-    <title>SMARTPICK PRO | AI-DRIVEN GLOBAL COMMERCE</title>
+    <title>SMARTPICK PRO | GLOBAL INTELLIGENCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; }
-        .hero-glow { background: radial-gradient(circle at 50% -20%, #3b82f633, transparent); }
-        .card-neo { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-neo:hover { border-color: #3b82f6; transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .moving-bg { position: fixed; inset: 0; background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 40px 40px; opacity: 0.3; z-index: -1; animation: move 100s linear infinite; }
-        @keyframes move { from { background-position: 0 0; } to { background-position: 1000px 1000px; } }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background: #020617; color: white; }
+        .grid-bg { background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px); background-size: 50px 50px; }
+        .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); }
+        .glow-text { text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
     </style>
 </head>
-<body>
-    <div class="moving-bg"></div>
-    <div class="fixed top-0 w-full hero-glow h-screen pointer-events-none"></div>
-
-    <!-- Header -->
-    <nav class="flex justify-between items-center p-8 container mx-auto">
-        <div class="text-2xl font-black italic tracking-tighter">SMARTPICK <span class="text-blue-500">PRO</span></div>
-        <div class="flex space-x-6 text-xs font-bold uppercase tracking-widest opacity-60">
-            <span class="text-blue-400">● AI ACTIVE</span>
-            <span>SYSTEM v2.5</span>
+<body class="grid-bg">
+    <!-- Navbar -->
+    <nav class="p-8 flex justify-between items-center container mx-auto">
+        <div class="text-3xl font-bold glow-text uppercase tracking-tighter">SmartPick<span class="text-blue-500">Pro</span></div>
+        <div class="hidden md:flex space-x-6 text-[10px] tracking-[0.3em] font-bold opacity-50">
+            <span>NETWORK STATUS: ONLINE</span>
+            <span class="text-blue-400">● AI CLOUD SYNCED</span>
         </div>
     </nav>
 
     <!-- Hero -->
-    <div class="container mx-auto text-center py-32 px-6" data-aos="zoom-out">
-        <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-none">REAL-TIME <br> <span class="text-blue-500">TREND</span> ENGINE</h1>
-        <p class="max-w-xl mx-auto opacity-50 text-lg mb-12 font-light">Global decentralized neural network identifying high-velocity consumer goods.</p>
-    </div>
+    <section class="container mx-auto text-center py-32 px-6" data-aos="fade-up">
+        <h1 class="text-7xl md:text-9xl font-bold mb-8 leading-none tracking-tighter">AI TREND <br> <span class="text-blue-500">IDENTIFIER</span></h1>
+        <p class="max-w-2xl mx-auto text-xl opacity-40 font-light">Analyzing 1.2M+ global transactions per hour to identify high-velocity consumer goods.</p>
+    </section>
 
-    <!-- Live Grid -->
+    <!-- Products -->
     <div class="container mx-auto px-6 pb-40">
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- AI will inject data here -->
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Data Injection -->
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
-        async function fetchAI() {
+        AOS.init({ duration: 1000 });
+        async function syncNetwork() {
             const grid = document.getElementById('product-grid');
             try {
-                const res = await fetch('products.json?v=' + Math.random());
+                const res = await fetch('products.json?v=' + Date.now());
                 const data = await res.json();
                 grid.innerHTML = '';
                 data.forEach((p, i) => {
                     grid.innerHTML += `
-                        <div class="card-neo rounded-3xl p-6 group" data-aos="fade-up" data-aos-delay="${i*100}">
-                            <div class="relative h-64 mb-6 rounded-2xl overflow-hidden bg-white flex items-center justify-center">
-                                <img src="${p.image}" class="max-h-full object-contain transition-transform duration-700 group-hover:scale-110" 
-                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Syncing...'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div class="glass-card rounded-[2.5rem] p-8 group" data-aos="fade-up" data-aos-delay="${i*100}">
+                            <div class="h-72 mb-8 rounded-3xl overflow-hidden bg-white flex items-center justify-center relative">
+                                <img src="${p.image}" class="max-h-[80%] object-contain transition-transform duration-700 group-hover:scale-110" 
+                                     onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=Syncing+Asset...'">
+                                <div class="absolute bottom-4 left-4 bg-blue-600 text-[10px] font-bold px-4 py-1 rounded-full uppercase">Verified Trend</div>
                             </div>
-                            <div class="text-xs text-blue-500 font-bold mb-2 uppercase tracking-widest">Global Batch #${i+100}</div>
-                            <h2 class="text-xl font-bold mb-4 h-14 overflow-hidden">${p.name}</h2>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-4">
-                                <span class="text-2xl font-black">${p.price}</span>
-                                <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-blue-600 transition">ANALYZE DEAL</a>
+                            <h3 class="text-2xl font-bold mb-4 h-16 overflow-hidden">${p.name}</h3>
+                            <div class="flex items-center justify-between border-t border-white/5 pt-6">
+                                <div class="text-3xl font-bold">${p.price}</div>
+                                <a href="${p.affiliate_link}" target="_blank" class="bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold text-sm hover:bg-white hover:text-blue-600 transition-all">ANALYZE DEAL</a>
                             </div>
                         </div>`;
                 });
-            } catch (e) { console.log(e); }
+            } catch (e) { console.error("Sync Error", e); }
         }
-        fetchAI();
+        syncNetwork();
     </script>
 </body>
 </html>
